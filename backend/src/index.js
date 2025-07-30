@@ -3,7 +3,7 @@ import http from "http";
 import { Server } from "socket.io";
 import cors from "cors";
 import dotenv from "dotenv";
-import { Sequelize } from "sequelize";
+import { sequelize } from "./db.js";
 
 dotenv.config();
 
@@ -17,16 +17,6 @@ app.use(cors());
 app.use(express.json());
 
 // MySQL 연결
-const sequelize = new Sequelize(
-  process.env.DB_NAME,
-  process.env.DB_USER,
-  process.env.DB_PASSWORD,
-  {
-    host: process.env.DB_HOST,
-    dialect: "mysql",
-  }
-);
-
 async function testDBConnection() {
   try {
     await sequelize.authenticate();
@@ -48,7 +38,7 @@ io.on("connection", (socket) => {
   // signaling, 채팅 이벤트 등 구현 예정
 });
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
   console.log(`🚀 서버 실행 중: http://localhost:${PORT}`);
 });
