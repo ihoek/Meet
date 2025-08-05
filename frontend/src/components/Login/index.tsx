@@ -14,11 +14,6 @@ const Login = () => {
   return (
     <LoginContainer>
       <div className="login-container">
-        {/* 헤더 */}
-        <div className="login-header">
-          <div>-</div>
-          <div>X</div>
-        </div>
         <div className="login-content-title">
           <h1>MEET</h1>
         </div>
