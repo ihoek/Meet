@@ -9,6 +9,9 @@
 - react
 - vite
 
+- styled-component
+- typescript
+
 ### 백엔드
 
 - node.js
