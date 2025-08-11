@@ -7,10 +7,10 @@ const Chat = () => {
   return (
     <ChatContainer>
       <div className="Container-left">
-        <ChatRoom />
+        <ChatList />
       </div>
       <div className="Container-right">
-        <ChatList />
+        <ChatRoom />
       </div>
     </ChatContainer>
   );
